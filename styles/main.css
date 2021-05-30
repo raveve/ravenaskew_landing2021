@@ -234,10 +234,10 @@ img {
 .content-wrapper .footer .right a {
   margin-right: 25px;
 }
+.content-wrapper .footer .right a:hover {
+  opacity: 0.35;
+}
 .content-wrapper .footer .right a span {
   font-size: 20px;
   line-height: 20px;
-}
-.content-wrapper .footer .right a:hover span {
-  border-color: transparent;
 }

@@ -9,12 +9,12 @@
   ],
   "creatorBuild" : "34127",
   "files" : {
-    "\/assets\/dummy.pdf" : {
+    "\/.gitattributes" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/assets\/dummy.pdf",
+      "oAP" : "\/.gitattributes",
       "oF" : 0
     },
     "\/assets\/noun_Raven_624985_sized.svg" : {
@@ -76,12 +76,28 @@
       "q" : 100,
       "rq" : 75
     },
+    "\/assets\/resume_coming_soon.pdf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/resume_coming_soon.pdf",
+      "oF" : 0
+    },
     "\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/index.html",
+      "oF" : 0
+    },
+    "\/LICENSE" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/LICENSE",
       "oF" : 0
     },
     "\/styles\/main.css" : {

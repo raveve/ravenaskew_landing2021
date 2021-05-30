@@ -214,13 +214,12 @@ img {
 
 			a {
 				margin-right: 25px;
+				&:hover {
+					opacity: .35;
+				}
 				span {
 					font-size: 20px;
     				line-height: 20px;
-				}
-
-				&:hover span {
-					border-color: transparent;
 				}
 			}
 		}
