@@ -1,6 +1,7 @@
 /*font-family: 'Josefin Slab', serif;*/
 /*font-family: 'Kaushan Script', cursive;*/
 /*font-family: 'Montserrat', sans-serif;*/
+/* Color Average Mountains: #292738 */
 /* BROWSER RESETS */
 * {
   margin: 0;
@@ -9,7 +10,6 @@
   color: #FFFFFF;
 }
 
-/* Color Average Mountains: #292738 */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
@@ -38,8 +38,62 @@ img {
 }
 
 /* END BROWSER RESETS */
+/* Animations & Animation Mixin */
+@keyframes wait {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes wait-foot {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes foot-line {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes wait-side {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 0;
+  }
+}
+@keyframes side-line {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+/* END Animations & Animation Mixin */
 .content-wrapper {
   position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.content-wrapper .back-image {
   width: 100%;
   height: 100vh;
   background-image: url("../assets/pexels-simon-berger-1323550.jpg");
@@ -47,11 +101,15 @@ img {
   background-position: center center;
   background-size: cover;
   box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  animation: fade-in 2s linear;
 }
 .content-wrapper .graphic {
   position: fixed;
   left: 50px;
   top: 50px;
+  opacity: 1;
+  animation: wait 2s, fade-in 1s linear 2s;
 }
 @media screen and (max-width: 767px) {
   .content-wrapper .graphic {
@@ -82,6 +140,8 @@ img {
   right: 0;
   top: calc(50% - 178px);
   margin: 0 auto;
+  opacity: 1;
+  animation: wait 5s, fade-in 1s linear 5s;
 }
 @media screen and (max-width: 1023px) {
   .content-wrapper .content {
@@ -165,10 +225,11 @@ img {
   }
 }
 .content-wrapper .sidebar {
-  position: absolute;
+  position: fixed;
   right: 50px;
+  top: 0;
   width: 3px;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -184,6 +245,7 @@ img {
   width: 3px;
   height: 50%;
   background-color: #FFFFFF;
+  animation: wait-side 3s, side-line 4s linear 3s;
 }
 .content-wrapper .sidebar .middle {
   display: flex;
@@ -191,6 +253,8 @@ img {
   align-items: center;
   width: 3px;
   margin: 48px 0;
+  opacity: 1;
+  animation: wait 5s, fade-in 1s linear 5s;
 }
 .content-wrapper .sidebar .middle a {
   color: #FFFFFF;
@@ -226,10 +290,13 @@ img {
   width: 100%;
   height: 3px;
   background-color: #FFFFFF;
+  animation: wait-foot 3s, foot-line 2s linear 3s;
 }
 .content-wrapper .footer .right {
   display: flex;
   margin-left: 25px;
+  opacity: 1;
+  animation: wait 5s, fade-in 1s linear 5s;
 }
 .content-wrapper .footer .right a {
   margin-right: 25px;

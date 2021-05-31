@@ -1,6 +1,7 @@
 /*font-family: 'Josefin Slab', serif;*/
 /*font-family: 'Kaushan Script', cursive;*/
 /*font-family: 'Montserrat', sans-serif;*/
+/* Color Average Mountains: #292738 */
 
 /* BROWSER RESETS */
 * {
@@ -9,8 +10,6 @@
 	box-sizing: border-box;
 	color: #FFFFFF;
 }
-
-/* Color Average Mountains: #292738 */
 
 body {
 	font-family: -apple-system, BlinkMacSystemFont, 
@@ -37,20 +36,84 @@ img {
 
 /* END BROWSER RESETS */
 
+
+
+/* Animations & Animation Mixin */
+
+@mixin fade-in($waitTime) {
+    animation: 
+        wait #{$waitTime},
+        fade-in 1s linear #{$waitTime};
+}
+
+@keyframes wait {
+    0% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@mixin foot-line($waitTime) {
+    animation: 
+        wait-foot #{$waitTime},
+        foot-line 2s linear #{$waitTime};
+}
+
+@keyframes wait-foot {
+    0% { width: 0; }
+    100% { width: 0; }
+}
+
+@keyframes foot-line {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+@mixin side-line($waitTime) {
+    animation: 
+        wait-side #{$waitTime},
+        side-line 4s linear #{$waitTime};
+}
+
+@keyframes wait-side {
+    0% { height: 0; }
+    100% { height: 0; }
+}
+
+@keyframes side-line {
+    0% { height: 0; }
+    100% { height: 100%; }
+}
+
+/* END Animations & Animation Mixin */
+
+
 .content-wrapper {
 	position: relative;
 	width: 100%;
 	height: 100vh;
-	background-image: url("../assets/pexels-simon-berger-1323550.jpg");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	box-shadow: inset 0 0 0 100vmax rgb(0 0 0 / 20%);
+
+	.back-image {
+		width: 100%;
+		height: 100vh;
+		background-image: url("../assets/pexels-simon-berger-1323550.jpg");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		box-shadow: inset 0 0 0 100vmax rgb(0 0 0 / 20%);
+		opacity: 1;
+		animation: fade-in 2s linear;
+	}
 
 	.graphic {
 		position: fixed;
 		left: 50px;
 		top: 50px;
+		opacity: 1;
+		@include fade-in('2s');
 		@media screen and (max-width: 767px) {
 			left: 15px;
 			top: 15px;
@@ -77,6 +140,8 @@ img {
 		right: 0;
 		top: calc(50% - 178px);
 		margin: 0 auto;
+		opacity: 1;
+		@include fade-in('5s');
 		@media screen and (max-width: 1023px) {
 			max-width: 485px;
 			top: calc(50% - 160px);
@@ -145,10 +210,11 @@ img {
 	}
 
 	.sidebar {
-		position: absolute;
+		position: fixed;
 		right: 50px;
+		top: 0;
 		width: 3px;
-		height: 100%;
+		height: 100vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -162,7 +228,8 @@ img {
 		.bottom {
 			width: 3px;
 			height: 50%;
-			background-color: #FFFFFF;	
+			background-color: #FFFFFF;
+			@include side-line('3s');
 		}
 
 		.middle {
@@ -171,6 +238,8 @@ img {
 			align-items: center;
 			width: 3px;
 			margin: 48px 0;
+			opacity: 1;
+			@include fade-in('5s');
 
 			a {
 				color: #FFFFFF;
@@ -206,11 +275,14 @@ img {
 			width: 100%;
 			height: 3px;
 			background-color: #FFFFFF;
+			@include foot-line('3s');
 		}
 
 		.right {
 			display: flex;
 			margin-left: 25px;
+			opacity: 1;
+			@include fade-in('5s');
 
 			a {
 				margin-right: 25px;
