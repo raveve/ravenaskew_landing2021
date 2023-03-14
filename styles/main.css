@@ -164,20 +164,20 @@ img {
 }
 .content-wrapper .content h1 {
   font-family: "Kaushan Script", cursive;
-  font-size: 100px;
+  font-size: 95px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.2;
 }
 @media screen and (max-width: 1023px) {
   .content-wrapper .content h1 {
-    font-size: 80px;
+    font-size: 75px;
   }
 }
 @media screen and (max-width: 767px) {
   .content-wrapper .content h1 {
     font-size: 38px;
-    line-height: 1.4l;
+    line-height: 1.6;
   }
 }
 .content-wrapper .content h2 {
@@ -274,8 +274,7 @@ img {
 .content-wrapper .footer {
   position: fixed;
   bottom: 42px;
-  width: calc(100% - 55px);
-  /* 50px space, 5px border & 25px space to social icons*/
+  width: calc(100% - 55px); /* 50px space, 5px border & 25px space to social icons*/
   display: flex;
   justify-content: space-between;
   align-items: center;
